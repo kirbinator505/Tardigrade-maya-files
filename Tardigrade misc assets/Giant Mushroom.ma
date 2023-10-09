@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: Giant Mushroom.ma
-//Last modified: Sun, Oct 08, 2023 08:20:04 PM
+//Last modified: Sun, Oct 08, 2023 11:16:01 PM
 //Codeset: 1252
 requires maya "2023";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
@@ -13,19 +13,19 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "5A4674E5-437D-FD22-0F43-029B36D8FD71";
+fileInfo "UUID" "17395D63-4A35-0B7C-EEE0-508EA76CA84C";
 createNode transform -s -n "persp";
 	rename -uid "2F48F3AC-41E6-6F08-A94B-02A3227FBED3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.95373321106050724 51.541967105701531 153.1671384650642 ;
-	setAttr ".r" -type "double3" -8.4000000000006203 355.19999999996031 -1.4961321529779459e-16 ;
+	setAttr ".t" -type "double3" -18.205081090774485 47.793255130027681 103.11970772862308 ;
+	setAttr ".r" -type "double3" -8.4000000000000039 347.19999999991319 0 ;
 	setAttr ".rpt" -type "double3" 1.0903818294097839e-14 -6.0950659803991784e-16 5.7944412008500467e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "948C0964-475F-40C7-D689-DAAF3D2A2F83";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
 	setAttr ".fcp" 100000;
-	setAttr ".coi" 134.58850066635668;
+	setAttr ".coi" 90.274128293447006;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -261,7 +261,7 @@ createNode mesh -n "polySurfaceShape1" -p "Cap";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 6 ".pt";
+	setAttr -s 4 ".pt";
 	setAttr ".pt[121]" -type "float3" -0.51558071 0 -0.0033447705 ;
 	setAttr ".pt[131]" -type "float3" 0.027042761 0 0.16833571 ;
 	setAttr ".pt[141]" -type "float3" 0.55861843 0 0.55364722 ;
@@ -7902,6 +7902,353 @@ createNode joint -n "ROOT_jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr ".radi" 0.5;
+createNode transform -n "Droop_Splines" -p "ROOT_jnt";
+	rename -uid "E0C577BE-40C5-1EE1-B579-60B6B4C8AFC5";
+	setAttr ".t" -type "double3" 1.8318679906315083e-15 -7.1054273576010019e-15 8.8817841970012523e-16 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
+createNode joint -n "Droop_1_Dynamics_jnt_1" -p "Droop_Splines";
+	rename -uid "027DFD47-41FC-990F-1C68-AF80F5A4B974";
+	setAttr ".t" -type "double3" -6.5438475608825692 31.543254852294918 36.924404144287109 ;
+	setAttr ".r" -type "double3" 0.40692232931185329 -0.00043734636712146102 0.12284581942917389 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_1_Dynamics_jnt_2" -p "Droop_1_Dynamics_jnt_1";
+	rename -uid "2C1571CC-43D2-C204-D716-029DCD300F65";
+	setAttr ".t" -type "double3" -0.010738849639892578 -5.03314208984375 0.035526275634765625 ;
+	setAttr ".r" -type "double3" -0.40410806410102162 -0.00043080770168847318 -0.12216213239521373 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_1_Dynamics_jnt_3" -p "Droop_1_Dynamics_jnt_2";
+	rename -uid "0BBE6395-4F85-0361-98B4-FB82FFD2498E";
+	setAttr ".t" -type "double3" 0 -4.9119682312011719 0 ;
+	setAttr ".r" -type "double3" 0.00019990213690340052 -1.5569397364827721e-10 8.9249747049934444e-05 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_1_Dynamics_jnt_4" -p "Droop_1_Dynamics_jnt_3";
+	rename -uid "382398B0-47B7-0C28-DC68-BA86352A4289";
+	setAttr ".t" -type "double3" 0 -4.0499725341796875 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode ikEffector -n "effector3" -p "Droop_1_Dynamics_jnt_3";
+	rename -uid "ECC4CE02-4CF1-5F2A-3DA8-05B969F2BB5F";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode ikHandle -n "Droop_1_IK_Handle" -p "Droop_Splines";
+	rename -uid "14FB8CA0-453B-B593-45E8-37B37941AA0E";
+	setAttr ".t" -type "double3" -6.5436814935955248 17.548035179380093 36.923729364994692 ;
+	setAttr ".r" -type "double3" 0.0030141748912954373 -5.4265612473962026e-07 0.00077295808876283467 ;
+	setAttr ".roc" yes;
+createNode transform -n "Droop_1_Spline_Curve" -p "Droop_Splines";
+	rename -uid "4F7D741B-4245-A54D-487C-9E956FCF96B8";
+	setAttr ".rp" -type "double3" -6.5437645272102198 24.545645015837533 36.924066754576295 ;
+	setAttr ".sp" -type "double3" -6.5437645272102198 24.545645015837533 36.924066754576295 ;
+createNode nurbsCurve -n "Droop_1_Spline_CurveShape" -p "Droop_1_Spline_Curve";
+	rename -uid "F4E3939B-4E65-1D1F-64A5-10B80528BD23";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Droop_1_Spline_CurveShapeOrig" -p "Droop_1_Spline_Curve";
+	rename -uid "48B174E3-4FEB-C11F-E394-E689E2BA18E4";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 3 0 no 3
+		8 0 0 0 4.6650732300891926 9.3301464601783852 13.995219690267579 13.995219690267579
+		 13.995219690267579
+		6
+		-6.5438475608825684 31.543254852294918 36.924404144287109
+		-6.5438316733276869 29.988230433798719 36.924337890140954
+		-6.5437998736818344 26.878181639306298 36.924205624416622
+		-6.5437456563692136 22.213108389780217 36.923977235396443
+		-6.5437029332041572 19.103059597060092 36.923811972734811
+		-6.5436814935378704 17.548035179380147 36.92372936486548
+		;
+createNode ikHandle -n "Droop_2_IK_Handle" -p "Droop_Splines";
+	rename -uid "4424C88E-4145-4DB2-B199-178E7E527BE6";
+	setAttr ".t" -type "double3" 5.6540651321411124 26.443243026733391 36.87248229980468 ;
+	setAttr ".roc" yes;
+createNode transform -n "Droop_2_Spline_Curve" -p "Droop_Splines";
+	rename -uid "F91D0102-4989-0163-4CB3-E7988144125E";
+createNode nurbsCurve -n "Droop_2_Spline_CurveShape" -p "Droop_2_Spline_Curve";
+	rename -uid "95101172-4E93-AF11-8F0E-B3B4649CD32F";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Droop_2_Spline_CurveShapeOrig" -p "Droop_2_Spline_Curve";
+	rename -uid "7C0A6FCA-4D68-A40D-D5E8-1982DD7993DE";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 3 0 no 3
+		8 0 0 0 1.6945743560791338 3.3891487121582675 5.0837230682374015 5.0837230682374015
+		 5.0837230682374015
+		6
+		5.654064178466796 31.526966094970696 36.87248229980468
+		5.654064241325945 30.962107972470637 36.87248229980468
+		5.6540643661431131 29.832391743715732 36.872482299804645
+		5.6540646568381803 28.137817377980966 36.872482299804673
+		5.6540649743404865 27.008101149251257 36.872482299804709
+		5.6540651321411168 26.443243026733416 36.872482299804709
+		;
+createNode joint -n "Droop_2_Dynamics_jnt_1" -p "Droop_Splines";
+	rename -uid "65D8FC34-4302-4352-E8AE-0AA7DF882809";
+	setAttr ".t" -type "double3" 5.654064178466796 31.526966094970696 36.87248229980468 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_2_Dynamics_jnt_2" -p "Droop_2_Dynamics_jnt_1";
+	rename -uid "FF3D2EE9-42A4-B0EF-8B18-D6BFC0B5E3A5";
+	setAttr ".t" -type "double3" 4.76837158203125e-07 -3.2432174682617188 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_2_Dynamics_jnt_2" -p "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2";
+	rename -uid "2B780A0C-4A71-DC43-31C0-789D316E1AC9";
+	setAttr ".t" -type "double3" 4.76837158203125e-07 -1.8405055999755859 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode ikEffector -n "effector4" -p "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2";
+	rename -uid "45564031-4902-BAB4-CC19-498A170EB719";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode joint -n "Droop_3_Dynamics_jnt_1" -p "Droop_Splines";
+	rename -uid "8344F963-4F0C-BF5C-EBEB-E9881D1EBF93";
+	setAttr ".t" -type "double3" 31.54740142822266 34.466526031494134 20.540988922119141 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_3_Dynamics_jnt_2" -p "Droop_3_Dynamics_jnt_1";
+	rename -uid "3D2ECE77-46CC-F4A5-61F7-C0AEC1431EC5";
+	setAttr ".t" -type "double3" 0 -4.7122535705566406 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_3_Dynamics_jnt_3" -p "Droop_3_Dynamics_jnt_2";
+	rename -uid "F882E71A-4883-E039-954E-22A7FB8EEEB2";
+	setAttr ".t" -type "double3" 0 -4.6806125640869141 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_3_Dynamics_jnt_4" -p "Droop_3_Dynamics_jnt_3";
+	rename -uid "E0597B39-4678-9E67-9DEF-00BDA3498492";
+	setAttr ".t" -type "double3" 0 -3.1612453460693359 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode ikEffector -n "effector5" -p "Droop_3_Dynamics_jnt_3";
+	rename -uid "738B0EE9-4195-FDB2-48D6-2E9E7529AE09";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode ikHandle -n "Droop_3_IK_handle" -p "Droop_Splines";
+	rename -uid "4FC8108A-4E04-32D3-9AF5-DBBE32A98A4A";
+	setAttr ".t" -type "double3" 31.547401428222663 21.912414550781243 20.540988922119141 ;
+	setAttr ".roc" yes;
+createNode transform -n "Droop_3_Spline_Curve" -p "Droop_Splines";
+	rename -uid "06A8431D-4976-8A00-7B72-CCA09CA728DC";
+	setAttr ".rp" -type "double3" 31.54740142822267 28.189470291137695 20.540988922119148 ;
+	setAttr ".sp" -type "double3" 31.54740142822267 28.189470291137695 20.540988922119148 ;
+createNode nurbsCurve -n "Droop_3_Spline_CurveShape" -p "Droop_3_Spline_Curve";
+	rename -uid "46244D4C-400F-2C02-1F5A-24B200FD8135";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Droop_3_Spline_CurveShapeOrig" -p "Droop_3_Spline_Curve";
+	rename -uid "A1AD7CF1-4C76-A6AB-6875-438925A2E06D";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 3 0 no 3
+		8 0 0 0 4.184703826904296 8.369407653808592 12.554111480712891 12.554111480712891
+		 12.554111480712891
+		6
+		31.547401428222656 34.466526031494134 20.540988922119141
+		31.547401428222649 33.071624746887231 20.540988922119148
+		31.547401428222713 30.281822215959007 20.540988922119119
+		31.547401428222628 26.09711836628809 20.540988922119173
+		31.547401428222663 23.307315835527994 20.540988922119144
+		31.547401428222663 21.912414550781254 20.540988922119144
+		;
+createNode joint -n "Droop_4_Dynamics_jnt_1" -p "Droop_Splines";
+	rename -uid "0F2E512E-4082-264D-468A-5DBA0000EF12";
+	setAttr ".t" -type "double3" 23.753801345825188 34.023166656494134 -25.891090393066403 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_4_Dynamics_jnt_2" -p "Droop_4_Dynamics_jnt_1";
+	rename -uid "E02BF527-4669-F7FC-0665-0C900EB269A4";
+	setAttr ".t" -type "double3" 1.9073486328125e-06 -5.2487964630126953 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_4_Dynamics_jnt_3" -p "Droop_4_Dynamics_jnt_2";
+	rename -uid "AE71FEC3-4F7A-9985-A988-19A8C1B81318";
+	setAttr ".t" -type "double3" 0 -5.0867347717285156 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_4_Dynamics_jnt_4" -p "Droop_4_Dynamics_jnt_3";
+	rename -uid "3AF0465C-4896-062F-D395-9FBC775A8B1D";
+	setAttr ".t" -type "double3" -1.9073486328125e-06 -5.4942817687988281 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_4_Dynamics_jnt_5" -p "Droop_4_Dynamics_jnt_4";
+	rename -uid "D1B402D9-4F1D-5B4F-D06B-E4A666D899B1";
+	setAttr ".t" -type "double3" 0 -2.6426239013671875 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode ikEffector -n "effector6" -p "Droop_4_Dynamics_jnt_4";
+	rename -uid "44A3B6F5-4C0A-9325-A080-6AB7F1A3527C";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode ikHandle -n "Droop_4_IK_Handle" -p "Droop_Splines";
+	rename -uid "609D82CA-4D98-DF58-83F6-09AC5FB081C9";
+	setAttr ".t" -type "double3" 23.753801345825188 15.550729751586907 -25.891090393066403 ;
+	setAttr ".roc" yes;
+createNode transform -n "Droop_4_Spline_Curve" -p "Droop_Splines";
+	rename -uid "0FAE7DAA-45ED-B9D1-3C0C-1795A895B5AB";
+	setAttr ".rp" -type "double3" 23.753802753657165 24.786948204040524 -25.891090393066413 ;
+	setAttr ".sp" -type "double3" 23.753802753657165 24.786948204040524 -25.891090393066413 ;
+createNode nurbsCurve -n "Droop_4_Spline_CurveShape" -p "Droop_4_Spline_Curve";
+	rename -uid "901B3E39-4B9F-9E51-C91B-AEB066146088";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Droop_4_Spline_CurveShapeOrig" -p "Droop_4_Spline_Curve";
+	rename -uid "530973FE-4AF2-8BFC-DE26-7599BB20211D";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 3 0 no 3
+		8 0 0 0 6.1574789683026347 12.314957936605269 18.472436904907905 18.472436904907905
+		 18.472436904907905
+		6
+		23.753801345825188 34.023166656494134 -25.891090393066403
+		23.753802226011594 31.970673653992741 -25.891090393066399
+		23.753804315219259 27.865687704777756 -25.891090393066456
+		23.753802594813639 21.708208703289571 -25.891090393066367
+		23.753801192095072 17.603222754139253 -25.891090393066406
+		23.753801345825199 15.550729751586914 -25.891090393066406
+		;
+createNode joint -n "Droop_5_Dynamics_jnt_1" -p "Droop_Splines";
+	rename -uid "D823C41F-492A-414C-1B51-22982B24023E";
+	setAttr ".t" -type "double3" -33.699878692626946 34.731941223144524 -17.654922485351559 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_5_Dynamics_jnt_2" -p "Droop_5_Dynamics_jnt_1";
+	rename -uid "47357C44-4E52-0BC4-38EA-B2BB8DB6447F";
+	setAttr ".t" -type "double3" 0 -2.9353160858154297 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_5_Dynamics_jnt_3" -p "Droop_5_Dynamics_jnt_2";
+	rename -uid "014671FD-48DB-CA84-9825-50B6C3BA58C9";
+	setAttr ".t" -type "double3" 7.1054273576010019e-15 -2.3613510131835866 0 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode ikEffector -n "effector7" -p "Droop_5_Dynamics_jnt_2";
+	rename -uid "B46D2CED-4B05-4DD0-84F2-938DB99C9F59";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode ikHandle -n "Droop_5_IK_Handle" -p "Droop_Splines";
+	rename -uid "9893B363-49D5-4CA3-AAB6-398DA524C649";
+	setAttr ".t" -type "double3" -33.699878692626939 29.435274124145508 -17.654922485351559 ;
+	setAttr ".roc" yes;
+createNode transform -n "Droop_5_Spline_Curve" -p "Droop_Splines";
+	rename -uid "D46E5F69-413A-A963-C25C-F58BD6F6427B";
+	setAttr ".rp" -type "double3" -33.699878692626953 32.083607673645012 -17.654922485351555 ;
+	setAttr ".sp" -type "double3" -33.699878692626953 32.083607673645012 -17.654922485351555 ;
+createNode nurbsCurve -n "Droop_5_Spline_CurveShape" -p "Droop_5_Spline_Curve";
+	rename -uid "49FD7315-4975-1C83-511A-0AAB62E6F0B5";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Droop_5_Spline_CurveShapeOrig" -p "Droop_5_Spline_Curve";
+	rename -uid "8405A347-4BF1-052D-6C60-6D9342AF60B1";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 3 0 no 3
+		8 0 0 0 1.7655556996663386 3.5311113993326773 5.2966670989990163 5.2966670989990163
+		 5.2966670989990163
+		6
+		-33.699878692626946 34.731941223144524 -17.654922485351559
+		-33.699878692626946 34.143422652638762 -17.654922485351559
+		-33.699878692626932 32.966385528497476 -17.654922485351541
+		-33.699878692626967 31.200829818760191 -17.654922485351566
+		-33.699878692626932 30.023792694707435 -17.654922485351555
+		-33.699878692626932 29.435274124145501 -17.654922485351555
+		;
+createNode joint -n "Droop_6_Dynamics_jnt_1" -p "Droop_Splines";
+	rename -uid "E99D035E-42E6-CAEC-F52E-ACB5187D9FB3";
+	setAttr ".t" -type "double3" -37.785331726074219 35.197128295898438 -11.015398025512695 ;
+	setAttr ".r" -type "double3" -2.0443011216906086e-06 5.9279688482117528e-10 0.0011923312778840465 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_6_Dynamics_jnt_2" -p "Droop_6_Dynamics_jnt_1";
+	rename -uid "276AAF03-423D-0072-B16D-AD8E03945365";
+	setAttr ".t" -type "double3" -0.00164794921875 -3.9050006866455078 -9.5367431640625e-07 ;
+	setAttr ".r" -type "double3" 7.8367259282975821e-06 -1.1140670844377724e-09 -0.0045557191170779261 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_6_Dynamics_jnt_3" -p "Droop_6_Dynamics_jnt_2";
+	rename -uid "532C1069-49B3-6070-408D-B58DF3152249";
+	setAttr ".t" -type "double3" 0 -3.0475559234619141 9.5367431640625e-07 ;
+	setAttr ".r" -type "double3" -9.9447936309206046e-06 5.0889685885836517e-10 0.0058639009064841222 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_6_Dynamics_jnt_4" -p "Droop_6_Dynamics_jnt_3";
+	rename -uid "9DD7628A-4967-FA94-CBD3-268042D89C20";
+	setAttr ".t" -type "double3" 0 -3.9618816375732422 0 ;
+	setAttr ".r" -type "double3" 6.2710980888755913e-06 1.3570933251189762e-09 -0.0038479230679175557 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode joint -n "Droop_6_Dynamics_jnt_5" -p "Droop_6_Dynamics_jnt_4";
+	rename -uid "A0DB69F0-45FA-5228-CABD-919D4420910B";
+	setAttr ".t" -type "double3" 0 -3.2007179260253906 -9.5367431640625e-07 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".radi" 0.2;
+createNode ikEffector -n "effector8" -p "Droop_6_Dynamics_jnt_4";
+	rename -uid "5CB8A3A7-4779-586B-4331-FD89814EA814";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode ikHandle -n "Droop_6_IK_Handle" -p "Droop_Splines";
+	rename -uid "172AD058-45B3-62B4-B250-D99E4FAA96F1";
+	setAttr ".t" -type "double3" -37.786979675303215 21.081972098652763 -11.015398979187051 ;
+	setAttr ".r" -type "double3" 2.1187292841464643e-06 -1.0342378274768965e-09 -0.0013474100006273311 ;
+	setAttr ".roc" yes;
+createNode transform -n "Droop_6_Spline_Curve" -p "Droop_Splines";
+	rename -uid "54F09E2D-4B9A-9657-3578-BCA43B0938EC";
+	setAttr ".rp" -type "double3" -37.786411701525388 28.13955020904541 -11.015398136486121 ;
+	setAttr ".sp" -type "double3" -37.786411701525388 28.13955020904541 -11.015398136486121 ;
+createNode nurbsCurve -n "Droop_6_Spline_CurveShape" -p "Droop_6_Spline_Curve";
+	rename -uid "4AB22B61-4D97-3EC0-8493-DE9330441411";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Droop_6_Spline_CurveShapeOrig" -p "Droop_6_Spline_Curve";
+	rename -uid "5B933CB4-42EC-14B1-567C-E9B9291595B6";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 3 0 no 3
+		8 0 0 0 4.7050521738106479 9.4101043476212958 14.115156521431945 14.115156521431945
+		 14.115156521431945
+		6
+		-37.785331726074219 35.197128295898438 -11.015398025512695
+		-37.786189587267835 33.628777735848516 -11.015398692548972
+		-37.787491676976558 30.492076637248836 -11.015399312392105
+		-37.786714695924367 25.787024205096614 -11.015396960580137
+		-37.786990153092262 22.650322902918052 -11.015398447424854
+		-37.786979675292976 21.081972122192386 -11.01539897918701
+		;
 createNode joint -n "Curve_Base" -p "ROOT_jnt";
 	rename -uid "C9B71C0F-4C6A-5A41-77B8-1589F239B295";
 	setAttr ".t" -type "double3" -1.2585361003875732 0.76655977964401367 0.19809508323669467 ;
@@ -8167,7 +8514,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_1_jnt_2_parentConstraint1" -p "|R
 	setAttr ".tg[0].tot" -type "double3" -3.0198066269804258e-14 0 -7.7715611723760958e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -1.6499127410091991e-14 6.9574633657014427e-15 
 		-1.525361722721419e-14 ;
-	setAttr ".lr" -type "double3" 1.6523975493540926e-14 -6.7586786981099743e-15 1.2826270075296477e-14 ;
+	setAttr ".lr" -type "double3" 1.6722760161132396e-14 -6.7338306146610406e-15 1.2829376085727593e-14 ;
 	setAttr ".rst" -type "double3" 19.820597153883032 7.1054273576010019e-15 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 1.6523975493540926e-14 -6.7586786981099743e-15 1.2826270075296477e-14 ;
 	setAttr -k on ".w0";
@@ -8235,7 +8582,7 @@ createNode joint -n "Cap_Flex_Chain_2_jnt_1" -p "Curve_DriverTip";
 	rename -uid "7514EE56-45A5-C9F9-50A1-0AB3A94D5CE3";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" -130.73491161906546 55.954537008130728 153.32649742664751 ;
+	setAttr ".jo" -type "double3" -130.73491161906546 55.954537008130735 153.32649742664751 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "Cap_Flex_Chain_2_jnt_2" -p "Cap_Flex_Chain_2_jnt_1";
 	rename -uid "8027470A-4888-81A7-E899-8C81E5098FCE";
@@ -8306,7 +8653,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_2_jnt_2_parentConstraint1" -p "Ca
 		3.5527136788005009e-15 ;
 	setAttr ".tg[0].tor" -type "double3" 3.0016484806311938e-14 -1.987846675914698e-15 
 		-1.4753549547804398e-14 ;
-	setAttr ".lr" -type "double3" -3.0364357974597013e-14 2.5593525952401789e-15 1.9527487580430792e-14 ;
+	setAttr ".lr" -type "double3" -2.8674688300069518e-14 7.1810961167418488e-15 1.3073197904570253e-14 ;
 	setAttr ".rst" -type "double3" 19.514081097091147 -7.1054273576010019e-15 -2.2204460492503131e-15 ;
 	setAttr ".rsrr" -type "double3" -3.0364357974597013e-14 2.5593525952401789e-15 1.9527487580430792e-14 ;
 	setAttr -k on ".w0";
@@ -8348,6 +8695,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_2_jnt_1_parentConstraint1" -p "Ca
 		1.5543122344752192e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -1.5902773407317584e-15 -3.1805546814635168e-15 
 		-3.1805546814635168e-15 ;
+	setAttr ".lr" -type "double3" -6.3611093629270335e-15 3.1805546814635156e-15 -1.9083328088781101e-14 ;
 	setAttr ".rst" -type "double3" 8.3533294056607446 5.1217892303552883 -8.0746365824315287 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Cap_Flex_Chain_2_jnt_1_scaleConstraint1" -p "Cap_Flex_Chain_2_jnt_1";
@@ -8442,11 +8790,11 @@ createNode parentConstraint -n "Cap_Flex_Chain_3_jnt_2_parentConstraint1" -p "Ca
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -5.3290705182007514e-15 -7.1054273576010019e-15 
 		-1.7763568394002505e-15 ;
-	setAttr ".tg[0].tor" -type "double3" 4.7708320221952744e-15 3.3395824155366934e-14 
+	setAttr ".tg[0].tor" -type "double3" 4.7708320221952744e-15 3.339582415536694e-14 
 		1.4809457735564502e-14 ;
-	setAttr ".lr" -type "double3" -5.3671860249696796e-15 -3.5383670831281615e-14 -1.4213103732790086e-14 ;
+	setAttr ".lr" -type "double3" -6.9574633657014372e-15 -3.568184783266882e-14 -1.4138559482443284e-14 ;
 	setAttr ".rst" -type "double3" 18.40240660133416 -1.4210854715202004e-14 -7.9936057773011271e-15 ;
-	setAttr ".rsrr" -type "double3" -5.3671860249696796e-15 -3.5383670831281615e-14 
+	setAttr ".rsrr" -type "double3" -5.3671860249696796e-15 -3.5383670831281621e-14 
 		-1.4213103732790086e-14 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Cap_Flex_Chain_3_jnt_2_scaleConstraint1" -p "Cap_Flex_Chain_3_jnt_2";
@@ -8585,7 +8933,7 @@ createNode parentConstraint -n "Cap_Flex_chain_4_jnt_2_parentConstraint1" -p "Ca
 		-5.3290705182007514e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -9.5416640443905487e-15 1.590277340731758e-15 
 		2.1269959432287264e-14 ;
-	setAttr ".lr" -type "double3" 7.9513867036587919e-15 9.9392333795734978e-16 -1.326887656173061e-14 ;
+	setAttr ".lr" -type "double3" 5.7647553601526243e-15 2.9817700138720583e-16 -2.2711148272325425e-14 ;
 	setAttr ".rst" -type "double3" 17.723366378729146 -7.1054273576010019e-15 0 ;
 	setAttr ".rsrr" -type "double3" 7.9513867036587919e-15 9.9392333795734978e-16 -1.326887656173061e-14 ;
 	setAttr -k on ".w0";
@@ -8652,7 +9000,7 @@ createNode joint -n "Cap_Flex_Chain_5_jnt_1" -p "Curve_DriverTip";
 	rename -uid "12871511-4A9D-15AB-760E-609E1E70C66D";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" 165.77423658402014 -26.606864644891921 128.49368860433299 ;
+	setAttr ".jo" -type "double3" 165.77423658402014 -26.606864644891925 128.49368860433299 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "Cap_Flex_Chain_5_jnt_2" -p "Cap_Flex_Chain_5_jnt_1";
 	rename -uid "9088D386-4DC4-FFA9-A270-C484F798D6DA";
@@ -8724,7 +9072,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_5_jnt_2_parentConstraint1" -p "Ca
 		-1.0658141036401503e-14 ;
 	setAttr ".tg[0].tor" -type "double3" -2.7034714792439894e-14 3.9756933518293967e-15 
 		7.4544250346801185e-15 ;
-	setAttr ".lr" -type "double3" 2.7829853462805771e-14 -3.9756933518293952e-15 -4.2738703532166017e-15 ;
+	setAttr ".lr" -type "double3" 3.2401900817409578e-14 -1.3914926731402874e-15 -4.6217435215016734e-15 ;
 	setAttr ".rst" -type "double3" 17.305274543533208 7.1054273576010019e-15 -5.3290705182007514e-15 ;
 	setAttr ".rsrr" -type "double3" 2.7829853462805771e-14 -3.9756933518293952e-15 -4.2738703532166017e-15 ;
 	setAttr -k on ".w0";
@@ -8766,7 +9114,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_5_jnt_1_parentConstraint1" -p "Ca
 		-5.3290705182007514e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -1.590277340731758e-15 1.272221872585407e-14 
 		-3.1805546814635176e-15 ;
-	setAttr ".lr" -type "double3" -3.1805546814635168e-15 -1.4312496066585827e-14 3.9725156682451432e-31 ;
+	setAttr ".lr" -type "double3" 0 -1.5902773407317584e-14 0 ;
 	setAttr ".rst" -type "double3" 7.8171443785932908 8.7180830030334793 4.8336128507389668 ;
 	setAttr ".rsrr" -type "double3" -3.1805546814635168e-15 -1.4312496066585827e-14 
 		3.9725156682451432e-31 ;
@@ -8865,7 +9213,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_6_jnt_2_parentConstraint1" -p "Ca
 		-1.1546319456101628e-14 ;
 	setAttr ".tg[0].tor" -type "double3" -5.5659706925611554e-14 -1.1927080055488187e-14 
 		2.082269393020646e-14 ;
-	setAttr ".lr" -type "double3" 5.6454845595977422e-14 1.1231333718918055e-14 -2.3655375443384901e-14 ;
+	setAttr ".lr" -type "double3" 5.1584621239986413e-14 5.6653630263568988e-15 -2.0238763969156516e-14 ;
 	setAttr ".rst" -type "double3" 17.365979732843851 7.1054273576010019e-15 5.3290705182007514e-15 ;
 	setAttr ".rsrr" -type "double3" 5.6454845595977422e-14 1.1231333718918055e-14 -2.3655375443384901e-14 ;
 	setAttr -k on ".w0";
@@ -8906,7 +9254,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_6_jnt_1_parentConstraint1" -p "Ca
 	setAttr ".tg[0].tot" -type "double3" -1.7763568394002505e-14 2.8421709430404007e-14 
 		-7.1054273576010019e-15 ;
 	setAttr ".tg[0].tor" -type "double3" 1.1131941385122306e-14 0 0 ;
-	setAttr ".lr" -type "double3" -1.2722218725854064e-14 3.1805546814635168e-15 6.361109362927032e-15 ;
+	setAttr ".lr" -type "double3" -1.2722218725854064e-14 -3.1805546814635152e-15 6.361109362927032e-15 ;
 	setAttr ".rst" -type "double3" 8.4058825825137689 4.9091776725328611 8.1732145145651458 ;
 	setAttr ".rsrr" -type "double3" -1.2722218725854064e-14 3.1805546814635168e-15 6.361109362927032e-15 ;
 	setAttr -k on ".w0";
@@ -9046,7 +9394,8 @@ createNode parentConstraint -n "Cap_Flex_Chain_7_jnt_1_parentConstraint1" -p "Ca
 		-6.3611093629270351e-15 ;
 	setAttr ".lr" -type "double3" -8.827812596100319e-31 -6.3611093629270335e-15 1.5902773407317584e-14 ;
 	setAttr ".rst" -type "double3" 9.1727303521217394 -0.080086279420229722 8.8989837024504226 ;
-	setAttr ".rsrr" -type "double3" -8.827812596100319e-31 -6.3611093629270335e-15 1.5902773407317584e-14 ;
+	setAttr ".rsrr" -type "double3" -8.8278125961003207e-31 -6.3611093629270335e-15 
+		1.5902773407317584e-14 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "Cap_Flex_Chain_7_jnt_1_scaleConstraint1" -p "Cap_Flex_Chain_7_jnt_1";
 	rename -uid "A7833B8A-47B9-093D-D389-A18FCB3BBFEF";
@@ -9206,13 +9555,13 @@ createNode joint -n "Cap_Flex_Chain_9_jnt_1" -p "Curve_DriverTip";
 	rename -uid "0415E428-4A5F-88BE-1089-A3B2D8AC69E3";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" 4.9821886765957437 -10.97054725776996 -106.06474135325766 ;
+	setAttr ".jo" -type "double3" 4.9821886765957437 -10.970547257769962 -106.06474135325766 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "Cap_Flex_Chain_9_jnt_2" -p "Cap_Flex_Chain_9_jnt_1";
 	rename -uid "330AD207-47C2-2D34-5F4A-30A3A6ADDEF9";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" -6.7797686839518168 6.4787097918490248 -22.038660596151995 ;
+	setAttr ".jo" -type "double3" -6.7797686839518176 6.4787097918490248 -22.038660596151995 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "Cap_Flex_Chain_9_jnt_3" -p "Cap_Flex_Chain_9_jnt_2";
 	rename -uid "FD9608B4-4A71-1951-6871-FB8936695D8F";
@@ -9278,7 +9627,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_9_jnt_2_parentConstraint1" -p "Ca
 		0 ;
 	setAttr ".tg[0].tor" -type "double3" 1.3517357396219947e-14 1.5107634736951704e-14 
 		-1.1539449953684822e-13 ;
-	setAttr ".lr" -type "double3" -1.5306419404543193e-14 -1.5306419404543158e-14 1.1668659987619277e-13 ;
+	setAttr ".lr" -type "double3" -1.451128073417731e-14 -1.5107634736951691e-14 1.167859922099885e-13 ;
 	setAttr ".rst" -type "double3" 17.947621290665637 0 0 ;
 	setAttr ".rsrr" -type "double3" -1.5306419404543193e-14 -1.5306419404543158e-14 
 		1.1668659987619277e-13 ;
@@ -9320,7 +9669,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_9_jnt_1_parentConstraint1" -p "Ca
 	setAttr ".tg[0].tot" -type "double3" -1.0658141036401503e-14 0 -8.8817841970012523e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 7.9513867036587919e-15 -2.2263882770244621e-14 
 		1.2523434058262599e-14 ;
-	setAttr ".lr" -type "double3" -3.180554681463516e-15 1.8288189418415221e-14 5.9635400277440935e-15 ;
+	setAttr ".lr" -type "double3" -3.180554681463516e-15 1.9083328088781101e-14 5.8641476939483593e-15 ;
 	setAttr ".rst" -type "double3" 10.287631334962867 -7.3916329787105584 2.4903127900529345 ;
 	setAttr ".rsrr" -type "double3" -3.180554681463516e-15 1.8288189418415221e-14 5.9635400277440935e-15 ;
 	setAttr -k on ".w0";
@@ -9418,7 +9767,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_10_jnt_2_parentConstraint1" -p "C
 		-6.2172489379008766e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -2.3059021440610504e-14 1.5902773407317584e-15 
 		-1.307009189413914e-14 ;
-	setAttr ".lr" -type "double3" 2.4052944778567844e-14 -1.0933156717530867e-15 1.3790686314158217e-14 ;
+	setAttr ".lr" -type "double3" 2.1468744099878737e-14 4.9696166897867006e-16 2.3332350358548767e-14 ;
 	setAttr ".rst" -type "double3" 18.614659873331096 -7.1054273576010019e-15 -4.4408920985006262e-15 ;
 	setAttr ".rsrr" -type "double3" 2.4052944778567844e-14 -1.0933156717530867e-15 1.3790686314158217e-14 ;
 	setAttr -k on ".w0";
@@ -9459,7 +9808,7 @@ createNode parentConstraint -n "Cap_Flex_Chain_10_jnt_1_parentConstraint1" -p "C
 	setAttr ".tg[0].tot" -type "double3" -1.7763568394002505e-15 0 8.8817841970012523e-16 ;
 	setAttr ".tg[0].tor" -type "double3" 6.361109362927032e-15 -6.3611093629270304e-15 
 		-2.1071174764695791e-14 ;
-	setAttr ".lr" -type "double3" -4.7708320221952736e-15 3.1805546814635168e-15 1.9083328088781097e-14 ;
+	setAttr ".lr" -type "double3" -9.5416640443905487e-15 3.1805546814635195e-15 3.1407977479452228e-14 ;
 	setAttr ".rst" -type "double3" 10.274543605726613 -7.3481892949590506 -2.7976969039718944 ;
 	setAttr ".rsrr" -type "double3" -4.7708320221952736e-15 3.1805546814635168e-15 1.9083328088781097e-14 ;
 	setAttr -k on ".w0";
@@ -9638,358 +9987,6 @@ createNode orientConstraint -n "Curve_DriverTip_orientConstraint1" -p "Curve_Dri
 	setAttr ".o" -type "double3" -179.98969470290808 0.066790153888786896 98.863989525533626 ;
 	setAttr ".rsrr" -type "double3" -180 -180 180 ;
 	setAttr -k on ".w0";
-createNode transform -n "Droop_Splines" -p "Curve_DriverTip";
-	rename -uid "E0C577BE-40C5-1EE1-B579-60B6B4C8AFC5";
-	setAttr ".t" -type "double3" -45.976296204810779 -6.9735054742727343 -4.1131164369008415 ;
-	setAttr ".r" -type "double3" -179.93241959025877 -0.00010943378086203258 98.863983454510162 ;
-	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999989 1.0000000000000002 ;
-createNode joint -n "Droop_1_Dynamics_jnt_1" -p "Droop_Splines";
-	rename -uid "027DFD47-41FC-990F-1C68-AF80F5A4B974";
-	setAttr ".t" -type "double3" -6.5438475608825692 31.543254852294918 36.924404144287109 ;
-	setAttr ".r" -type "double3" 0.40691895218125373 -0.00043733565336453529 0.12284578750355425 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_1_Dynamics_jnt_2" -p "Droop_1_Dynamics_jnt_1";
-	rename -uid "2C1571CC-43D2-C204-D716-029DCD300F65";
-	setAttr ".t" -type "double3" -0.010738849639892578 -5.03314208984375 0.035526275634765625 ;
-	setAttr ".r" -type "double3" -0.40410305577372491 -0.00043080128526137433 -0.12216182694854288 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_1_Dynamics_jnt_3" -p "Droop_1_Dynamics_jnt_2";
-	rename -uid "0BBE6395-4F85-0361-98B4-FB82FFD2498E";
-	setAttr ".t" -type "double3" 0 -4.9119682312011719 0 ;
-	setAttr ".r" -type "double3" 0.00020645747184355607 -1.5651620231000515e-10 8.687230098955143e-05 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_1_Dynamics_jnt_4" -p "Droop_1_Dynamics_jnt_3";
-	rename -uid "382398B0-47B7-0C28-DC68-BA86352A4289";
-	setAttr ".t" -type "double3" 0 -4.0499725341796875 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode ikEffector -n "effector3" -p "Droop_1_Dynamics_jnt_3";
-	rename -uid "ECC4CE02-4CF1-5F2A-3DA8-05B969F2BB5F";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode ikHandle -n "Droop_1_IK_Handle" -p "Droop_Splines";
-	rename -uid "14FB8CA0-453B-B593-45E8-37B37941AA0E";
-	setAttr ".t" -type "double3" -6.5436816216682629 17.548035179402714 36.923728943159389 ;
-	setAttr ".r" -type "double3" 0.0030223614100938325 -5.3478159064263148e-07 0.00077085417587660534 ;
-	setAttr ".roc" yes;
-createNode transform -n "Droop_1_Spline_Curve" -p "Droop_Splines";
-	rename -uid "4F7D741B-4245-A54D-487C-9E956FCF96B8";
-	setAttr ".rp" -type "double3" -6.5437645272102198 24.545645015837533 36.924066754576295 ;
-	setAttr ".sp" -type "double3" -6.5437645272102198 24.545645015837533 36.924066754576295 ;
-createNode nurbsCurve -n "Droop_1_Spline_CurveShape" -p "Droop_1_Spline_Curve";
-	rename -uid "F4E3939B-4E65-1D1F-64A5-10B80528BD23";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode nurbsCurve -n "Droop_1_Spline_CurveShapeOrig" -p "Droop_1_Spline_Curve";
-	rename -uid "48B174E3-4FEB-C11F-E394-E689E2BA18E4";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".cc" -type "nurbsCurve" 
-		3 3 0 no 3
-		8 0 0 0 4.6650732300891926 9.3301464601783852 13.995219690267579 13.995219690267579
-		 13.995219690267579
-		6
-		-6.5438475608825684 31.543254852294918 36.924404144287109
-		-6.5438316733276869 29.988230433798719 36.924337890140954
-		-6.5437998736818344 26.878181639306298 36.924205624416622
-		-6.5437456563692136 22.213108389780217 36.923977235396443
-		-6.5437029332041572 19.103059597060092 36.923811972734811
-		-6.5436814935378704 17.548035179380147 36.92372936486548
-		;
-createNode ikHandle -n "Droop_2_IK_Handle" -p "Droop_Splines";
-	rename -uid "4424C88E-4145-4DB2-B199-178E7E527BE6";
-	setAttr ".t" -type "double3" 5.6540651321411124 26.443243026733391 36.87248229980468 ;
-	setAttr ".r" -type "double3" -7.0622500768802538e-31 5.5173828725626983e-33 5.6504630465829604e-30 ;
-	setAttr ".roc" yes;
-createNode transform -n "Droop_2_Spline_Curve" -p "Droop_Splines";
-	rename -uid "F91D0102-4989-0163-4CB3-E7988144125E";
-createNode nurbsCurve -n "Droop_2_Spline_CurveShape" -p "Droop_2_Spline_Curve";
-	rename -uid "95101172-4E93-AF11-8F0E-B3B4649CD32F";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode nurbsCurve -n "Droop_2_Spline_CurveShapeOrig" -p "Droop_2_Spline_Curve";
-	rename -uid "7C0A6FCA-4D68-A40D-D5E8-1982DD7993DE";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".cc" -type "nurbsCurve" 
-		3 3 0 no 3
-		8 0 0 0 1.6945743560791338 3.3891487121582675 5.0837230682374015 5.0837230682374015
-		 5.0837230682374015
-		6
-		5.654064178466796 31.526966094970696 36.87248229980468
-		5.654064241325945 30.962107972470637 36.87248229980468
-		5.6540643661431131 29.832391743715732 36.872482299804645
-		5.6540646568381803 28.137817377980966 36.872482299804673
-		5.6540649743404865 27.008101149251257 36.872482299804709
-		5.6540651321411168 26.443243026733416 36.872482299804709
-		;
-createNode joint -n "Droop_2_Dynamics_jnt_1" -p "Droop_Splines";
-	rename -uid "65D8FC34-4302-4352-E8AE-0AA7DF882809";
-	setAttr ".t" -type "double3" 5.654064178466796 31.526966094970696 36.87248229980468 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_2_Dynamics_jnt_2" -p "Droop_2_Dynamics_jnt_1";
-	rename -uid "FF3D2EE9-42A4-B0EF-8B18-D6BFC0B5E3A5";
-	setAttr ".t" -type "double3" 4.76837158203125e-07 -3.2432174682617188 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_2_Dynamics_jnt_2" -p "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2";
-	rename -uid "2B780A0C-4A71-DC43-31C0-789D316E1AC9";
-	setAttr ".t" -type "double3" 4.76837158203125e-07 -1.8405055999755859 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode ikEffector -n "effector4" -p "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2";
-	rename -uid "45564031-4902-BAB4-CC19-498A170EB719";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode joint -n "Droop_3_Dynamics_jnt_1" -p "Droop_Splines";
-	rename -uid "8344F963-4F0C-BF5C-EBEB-E9881D1EBF93";
-	setAttr ".t" -type "double3" 31.54740142822266 34.466526031494134 20.540988922119141 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_3_Dynamics_jnt_2" -p "Droop_3_Dynamics_jnt_1";
-	rename -uid "3D2ECE77-46CC-F4A5-61F7-C0AEC1431EC5";
-	setAttr ".t" -type "double3" 0 -4.7122535705566406 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_3_Dynamics_jnt_3" -p "Droop_3_Dynamics_jnt_2";
-	rename -uid "F882E71A-4883-E039-954E-22A7FB8EEEB2";
-	setAttr ".t" -type "double3" 0 -4.6806125640869141 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_3_Dynamics_jnt_4" -p "Droop_3_Dynamics_jnt_3";
-	rename -uid "E0597B39-4678-9E67-9DEF-00BDA3498492";
-	setAttr ".t" -type "double3" 0 -3.1612453460693359 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode ikEffector -n "effector5" -p "Droop_3_Dynamics_jnt_3";
-	rename -uid "738B0EE9-4195-FDB2-48D6-2E9E7529AE09";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode ikHandle -n "Droop_3_IK_handle" -p "Droop_Splines";
-	rename -uid "4FC8108A-4E04-32D3-9AF5-DBBE32A98A4A";
-	setAttr ".t" -type "double3" 31.547401428222667 21.912414550781239 20.540988922119141 ;
-	setAttr ".r" -type "double3" -7.0622500768802538e-31 5.5173828725626983e-33 5.6504630465829604e-30 ;
-	setAttr ".roc" yes;
-createNode transform -n "Droop_3_Spline_Curve" -p "Droop_Splines";
-	rename -uid "06A8431D-4976-8A00-7B72-CCA09CA728DC";
-	setAttr ".rp" -type "double3" 31.54740142822267 28.189470291137695 20.540988922119148 ;
-	setAttr ".sp" -type "double3" 31.54740142822267 28.189470291137695 20.540988922119148 ;
-createNode nurbsCurve -n "Droop_3_Spline_CurveShape" -p "Droop_3_Spline_Curve";
-	rename -uid "46244D4C-400F-2C02-1F5A-24B200FD8135";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode nurbsCurve -n "Droop_3_Spline_CurveShapeOrig" -p "Droop_3_Spline_Curve";
-	rename -uid "A1AD7CF1-4C76-A6AB-6875-438925A2E06D";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".cc" -type "nurbsCurve" 
-		3 3 0 no 3
-		8 0 0 0 4.184703826904296 8.369407653808592 12.554111480712891 12.554111480712891
-		 12.554111480712891
-		6
-		31.547401428222656 34.466526031494134 20.540988922119141
-		31.547401428222649 33.071624746887231 20.540988922119148
-		31.547401428222713 30.281822215959007 20.540988922119119
-		31.547401428222628 26.09711836628809 20.540988922119173
-		31.547401428222663 23.307315835527994 20.540988922119144
-		31.547401428222663 21.912414550781254 20.540988922119144
-		;
-createNode joint -n "Droop_4_Dynamics_jnt_1" -p "Droop_Splines";
-	rename -uid "0F2E512E-4082-264D-468A-5DBA0000EF12";
-	setAttr ".t" -type "double3" 23.753801345825188 34.023166656494134 -25.891090393066403 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_4_Dynamics_jnt_2" -p "Droop_4_Dynamics_jnt_1";
-	rename -uid "E02BF527-4669-F7FC-0665-0C900EB269A4";
-	setAttr ".t" -type "double3" 1.9073486328125e-06 -5.2487964630126953 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_4_Dynamics_jnt_3" -p "Droop_4_Dynamics_jnt_2";
-	rename -uid "AE71FEC3-4F7A-9985-A988-19A8C1B81318";
-	setAttr ".t" -type "double3" 0 -5.0867347717285156 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_4_Dynamics_jnt_4" -p "Droop_4_Dynamics_jnt_3";
-	rename -uid "3AF0465C-4896-062F-D395-9FBC775A8B1D";
-	setAttr ".t" -type "double3" -1.9073486328125e-06 -5.4942817687988281 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_4_Dynamics_jnt_5" -p "Droop_4_Dynamics_jnt_4";
-	rename -uid "D1B402D9-4F1D-5B4F-D06B-E4A666D899B1";
-	setAttr ".t" -type "double3" 0 -2.6426239013671875 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode ikEffector -n "effector6" -p "Droop_4_Dynamics_jnt_4";
-	rename -uid "44A3B6F5-4C0A-9325-A080-6AB7F1A3527C";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode ikHandle -n "Droop_4_IK_Handle" -p "Droop_Splines";
-	rename -uid "609D82CA-4D98-DF58-83F6-09AC5FB081C9";
-	setAttr ".t" -type "double3" 23.753801345825192 15.550729751586905 -25.891090393066399 ;
-	setAttr ".r" -type "double3" -7.0622500768802538e-31 5.5173828725626983e-33 5.6504630465829604e-30 ;
-	setAttr ".roc" yes;
-createNode transform -n "Droop_4_Spline_Curve" -p "Droop_Splines";
-	rename -uid "0FAE7DAA-45ED-B9D1-3C0C-1795A895B5AB";
-	setAttr ".rp" -type "double3" 23.753802753657165 24.786948204040524 -25.891090393066413 ;
-	setAttr ".sp" -type "double3" 23.753802753657165 24.786948204040524 -25.891090393066413 ;
-createNode nurbsCurve -n "Droop_4_Spline_CurveShape" -p "Droop_4_Spline_Curve";
-	rename -uid "901B3E39-4B9F-9E51-C91B-AEB066146088";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode nurbsCurve -n "Droop_4_Spline_CurveShapeOrig" -p "Droop_4_Spline_Curve";
-	rename -uid "530973FE-4AF2-8BFC-DE26-7599BB20211D";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".cc" -type "nurbsCurve" 
-		3 3 0 no 3
-		8 0 0 0 6.1574789683026347 12.314957936605269 18.472436904907905 18.472436904907905
-		 18.472436904907905
-		6
-		23.753801345825188 34.023166656494134 -25.891090393066403
-		23.753802226011594 31.970673653992741 -25.891090393066399
-		23.753804315219259 27.865687704777756 -25.891090393066456
-		23.753802594813639 21.708208703289571 -25.891090393066367
-		23.753801192095072 17.603222754139253 -25.891090393066406
-		23.753801345825199 15.550729751586914 -25.891090393066406
-		;
-createNode joint -n "Droop_5_Dynamics_jnt_1" -p "Droop_Splines";
-	rename -uid "D823C41F-492A-414C-1B51-22982B24023E";
-	setAttr ".t" -type "double3" -33.699878692626946 34.731941223144524 -17.654922485351559 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_5_Dynamics_jnt_2" -p "Droop_5_Dynamics_jnt_1";
-	rename -uid "47357C44-4E52-0BC4-38EA-B2BB8DB6447F";
-	setAttr ".t" -type "double3" 0 -2.9353160858154297 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_5_Dynamics_jnt_3" -p "Droop_5_Dynamics_jnt_2";
-	rename -uid "014671FD-48DB-CA84-9825-50B6C3BA58C9";
-	setAttr ".t" -type "double3" 7.1054273576010019e-15 -2.3613510131835866 0 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode ikEffector -n "effector7" -p "Droop_5_Dynamics_jnt_2";
-	rename -uid "B46D2CED-4B05-4DD0-84F2-938DB99C9F59";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode ikHandle -n "Droop_5_IK_Handle" -p "Droop_Splines";
-	rename -uid "9893B363-49D5-4CA3-AAB6-398DA524C649";
-	setAttr ".t" -type "double3" -33.699878692626939 29.435274124145508 -17.654922485351559 ;
-	setAttr ".r" -type "double3" -7.0622500768802538e-31 5.5173828725626983e-33 5.6504630465829604e-30 ;
-	setAttr ".roc" yes;
-createNode transform -n "Droop_5_Spline_Curve" -p "Droop_Splines";
-	rename -uid "D46E5F69-413A-A963-C25C-F58BD6F6427B";
-	setAttr ".rp" -type "double3" -33.699878692626953 32.083607673645012 -17.654922485351555 ;
-	setAttr ".sp" -type "double3" -33.699878692626953 32.083607673645012 -17.654922485351555 ;
-createNode nurbsCurve -n "Droop_5_Spline_CurveShape" -p "Droop_5_Spline_Curve";
-	rename -uid "49FD7315-4975-1C83-511A-0AAB62E6F0B5";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode nurbsCurve -n "Droop_5_Spline_CurveShapeOrig" -p "Droop_5_Spline_Curve";
-	rename -uid "8405A347-4BF1-052D-6C60-6D9342AF60B1";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".cc" -type "nurbsCurve" 
-		3 3 0 no 3
-		8 0 0 0 1.7655556996663386 3.5311113993326773 5.2966670989990163 5.2966670989990163
-		 5.2966670989990163
-		6
-		-33.699878692626946 34.731941223144524 -17.654922485351559
-		-33.699878692626946 34.143422652638762 -17.654922485351559
-		-33.699878692626932 32.966385528497476 -17.654922485351541
-		-33.699878692626967 31.200829818760191 -17.654922485351566
-		-33.699878692626932 30.023792694707435 -17.654922485351555
-		-33.699878692626932 29.435274124145501 -17.654922485351555
-		;
-createNode joint -n "Droop_6_Dynamics_jnt_1" -p "Droop_Splines";
-	rename -uid "E99D035E-42E6-CAEC-F52E-ACB5187D9FB3";
-	setAttr ".t" -type "double3" -37.785331726074219 35.197128295898438 -11.015398025512697 ;
-	setAttr ".r" -type "double3" -2.7353489702111419e-06 8.9135262916791158e-10 0.0011935281456728699 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_6_Dynamics_jnt_2" -p "Droop_6_Dynamics_jnt_1";
-	rename -uid "276AAF03-423D-0072-B16D-AD8E03945365";
-	setAttr ".t" -type "double3" -0.00164794921875 -3.9050006866455078 -9.5367431640625e-07 ;
-	setAttr ".r" -type "double3" 7.3290420713789688e-06 -1.137021817322237e-09 -0.0045668495451467103 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_6_Dynamics_jnt_3" -p "Droop_6_Dynamics_jnt_2";
-	rename -uid "532C1069-49B3-6070-408D-B58DF3152249";
-	setAttr ".t" -type "double3" 0 -3.0475559234619141 9.5367431640625e-07 ;
-	setAttr ".r" -type "double3" -9.8504471706129016e-06 5.0403078429325817e-10 0.0058634570209693425 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_6_Dynamics_jnt_4" -p "Droop_6_Dynamics_jnt_3";
-	rename -uid "9DD7628A-4967-FA94-CBD3-268042D89C20";
-	setAttr ".t" -type "double3" 0 -3.9618816375732422 0 ;
-	setAttr ".r" -type "double3" 1.0726977452828428e-05 1.4944942900696144e-09 -0.0038167021632329731 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode joint -n "Droop_6_Dynamics_jnt_5" -p "Droop_6_Dynamics_jnt_4";
-	rename -uid "A0DB69F0-45FA-5228-CABD-919D4420910B";
-	setAttr ".t" -type "double3" 0 -3.2007179260253906 -9.5367431640625e-07 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".radi" 0.2;
-createNode ikEffector -n "effector8" -p "Droop_6_Dynamics_jnt_4";
-	rename -uid "5CB8A3A7-4779-586B-4331-FD89814EA814";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode ikHandle -n "Droop_6_IK_Handle" -p "Droop_Splines";
-	rename -uid "172AD058-45B3-62B4-B250-D99E4FAA96F1";
-	setAttr ".t" -type "double3" -37.786979675294319 21.081972098592761 -11.01539897918704 ;
-	setAttr ".r" -type "double3" 5.470223403208249e-06 -1.0383018499343458e-09 -0.0013265665417374678 ;
-	setAttr ".roc" yes;
-createNode transform -n "Droop_6_Spline_Curve" -p "Droop_Splines";
-	rename -uid "54F09E2D-4B9A-9657-3578-BCA43B0938EC";
-	setAttr ".rp" -type "double3" -37.786411701525388 28.13955020904541 -11.015398136486121 ;
-	setAttr ".sp" -type "double3" -37.786411701525388 28.13955020904541 -11.015398136486121 ;
-createNode nurbsCurve -n "Droop_6_Spline_CurveShape" -p "Droop_6_Spline_Curve";
-	rename -uid "4AB22B61-4D97-3EC0-8493-DE9330441411";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode nurbsCurve -n "Droop_6_Spline_CurveShapeOrig" -p "Droop_6_Spline_Curve";
-	rename -uid "5B933CB4-42EC-14B1-567C-E9B9291595B6";
-	setAttr -k off ".v";
-	setAttr ".io" yes;
-	setAttr ".cc" -type "nurbsCurve" 
-		3 3 0 no 3
-		8 0 0 0 4.7050521738106479 9.4101043476212958 14.115156521431945 14.115156521431945
-		 14.115156521431945
-		6
-		-37.785331726074219 35.197128295898438 -11.015398025512695
-		-37.786189587267835 33.628777735848516 -11.015398692548972
-		-37.787491676976558 30.492076637248836 -11.015399312392105
-		-37.786714695924367 25.787024205096614 -11.015396960580137
-		-37.786990153092262 22.650322902918052 -11.015398447424854
-		-37.786979675292976 21.081972122192386 -11.01539897918701
-		;
 createNode ikEffector -n "effector2" -p "Curve_Driver_3";
 	rename -uid "3AA517D2-4DF5-1A24-0E21-349E25B244FF";
 	setAttr ".v" no;
@@ -10593,7 +10590,7 @@ createNode nurbsCurve -n "Cap_Flex_Chain_4_01_CtrlShape" -p "Cap_Flex_Chain_4_01
 createNode transform -n "Cap_Flex_Chain_4_02_Ctrl_Grp" -p "Cap_Flex_Chain_4_01_Ctrl";
 	rename -uid "ADE7CB5A-49C7-032E-D66A-998F1F904662";
 	setAttr ".t" -type "double3" 17.723366378729143 -7.1054273576010019e-15 8.8817841970012523e-16 ;
-	setAttr ".r" -type "double3" 5.9053643562967917 -5.9398344310231277 -20.788508997988373 ;
+	setAttr ".r" -type "double3" 5.9053643562967917 -5.9398344310231277 -20.788508997988377 ;
 	setAttr ".s" -type "double3" 0.99999999999999978 0.99999999999999956 1 ;
 createNode transform -n "Cap_Flex_Chain_4_02_Ctrl" -p "Cap_Flex_Chain_4_02_Ctrl_Grp";
 	rename -uid "453524BE-4CA5-E5FD-3237-129C39816E15";
@@ -11573,9 +11570,8 @@ createNode parentConstraint -n "Droop_1_Base_Dynamic_Curve_parentConstraint1" -p
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 6.3697733374993977 -5.7444203535140943 0.52309650722786638 ;
-	setAttr ".tg[0].tor" -type "double3" -5.3433318648587084e-13 96.851491642578026 
-		43.035780157160445 ;
-	setAttr ".lr" -type "double3" 6.0430538947806798e-13 4.7708320221952744e-15 2.5159265898885895e-29 ;
+	setAttr ".tg[0].tor" -type "double3" -5.3433318648587084e-13 96.85149164257804 43.035780157160445 ;
+	setAttr ".lr" -type "double3" 6.0112483479660466e-13 1.9083328088781085e-14 3.180554681463617e-15 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 1.7763568394002505e-14 1.4210854715202004e-14 ;
 	setAttr ".rsrr" -type "double3" 6.0430538947806798e-13 4.7708320221952744e-15 2.5159265898885895e-29 ;
 	setAttr -k on ".w0";
@@ -11623,11 +11619,10 @@ createNode parentConstraint -n "Droop_2_Base_Dynamic_Curve_parentConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
 	setAttr ".tg[0].tot" -type "double3" 2.2389933073859254 -3.5275275312732717 -11.581470454506114 ;
-	setAttr ".tg[0].tor" -type "double3" -5.3433318648587084e-13 96.851491642578026 
-		43.035780157160445 ;
+	setAttr ".tg[0].tor" -type "double3" -5.3433318648587084e-13 96.85149164257804 43.035780157160445 ;
 	setAttr ".tg[1].tot" -type "double3" 3.6478350942043094 -3.2762741323604487 9.5139857568116017 ;
 	setAttr ".tg[1].tor" -type "double3" 4.2956143981470607e-13 70.986897012739988 42.451260059557754 ;
-	setAttr ".lr" -type "double3" 8.9055531080978469e-14 -3.9756933518294024e-16 7.951386703658788e-16 ;
+	setAttr ".lr" -type "double3" 7.9513867036587922e-14 1.1927080055488193e-14 -8.7465253740246624e-15 ;
 	setAttr ".rst" -type "double3" 0 -1.0658141036401503e-14 0 ;
 	setAttr ".rsrr" -type "double3" 8.9055531080978469e-14 -3.9756933518294024e-16 7.951386703658788e-16 ;
 	setAttr -k on ".w0";
@@ -11723,11 +11718,11 @@ createNode parentConstraint -n "Droop_4_Base_Dynamic_Curve_parentConstraint1" -p
 	setAttr -s 2 ".tg";
 	setAttr ".tg[0].tot" -type "double3" 6.4643634606982534 -9.6790398646656683 -7.393195044233444 ;
 	setAttr ".tg[0].tor" -type "double3" -4.0862217250320497e-14 -21.280979569294729 
-		51.135962453996022 ;
+		51.135962453996029 ;
 	setAttr ".tg[1].tot" -type "double3" 6.2246375018036373 -7.429863854347154 12.172679476541184 ;
 	setAttr ".tg[1].tor" -type "double3" 2.6049186358854206e-14 -60.765041563549111 
 		54.511010094168107 ;
-	setAttr ".lr" -type "double3" 7.1562480332929135e-15 2.3854160110976372e-15 5.7647553601526243e-15 ;
+	setAttr ".lr" -type "double3" 1.1131941385122309e-14 2.7829853462805764e-15 7.3550327008843819e-15 ;
 	setAttr ".rst" -type "double3" 0 -3.5527136788005009e-15 0 ;
 	setAttr ".rsrr" -type "double3" 7.1562480332929135e-15 2.3854160110976372e-15 5.7647553601526243e-15 ;
 	setAttr -k on ".w0";
@@ -11780,8 +11775,8 @@ createNode parentConstraint -n "Droop_5_Base_Dynamic_Curve_parentConstraint1" -p
 		46.111606870848362 ;
 	setAttr ".tg[1].tot" -type "double3" 2.3676861981689559 -2.864687051830181 -14.111459673697617 ;
 	setAttr ".tg[1].tor" -type "double3" -4.0711099922733015e-13 223.05416516616538 
-		51.186380492525061 ;
-	setAttr ".lr" -type "double3" 2.454990644754652e-13 6.9574633657010347e-16 1.9083328088781104e-14 ;
+		51.186380492525068 ;
+	setAttr ".lr" -type "double3" 2.4708934181619696e-13 1.4908850069359893e-15 1.5902773407317587e-14 ;
 	setAttr ".rst" -type "double3" 0 7.1054273576010019e-15 -3.5527136788005009e-15 ;
 	setAttr ".rsrr" -type "double3" 2.454990644754652e-13 6.9574633657010347e-16 1.9083328088781104e-14 ;
 	setAttr -k on ".w0";
@@ -12165,26 +12160,26 @@ createNode nucleus -n "nucleus1";
 	setAttr -s 6 ".nias";
 	setAttr -s 6 ".noao";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C9D5470B-4F0D-1323-407F-FBA02A02BBB4";
+	rename -uid "AD0D26BD-4F55-234E-DFF6-0AA3833E8DEE";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "C920541D-4325-6E42-740E-10A26C221768";
+	rename -uid "62EFC745-483F-D3F1-7D6C-A897F4882D92";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 6 0 1 2 3 4
 		 5 ;
 	setAttr -s 6 ".bspr";
 	setAttr -s 6 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "ADEC2948-4272-FD21-328C-79BC59CAC507";
+	rename -uid "62DED69E-4306-73E1-2460-3FA3B6127992";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "641B86AC-4E86-3D50-080D-569948D82521";
+	rename -uid "3F7BC13B-45A7-FA60-2B70-ECB1FBBC3BED";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "350F8599-4EA5-14B6-2D2D-BDA68CE0B8D4";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "768BB51D-4A4F-9D88-F8AA-C38D466B81C5";
+	rename -uid "45C807EC-42B2-0091-167F-6F91622C4BD6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "04D46EA7-471C-C265-580C-6C84105ADE14";
 	setAttr ".g" yes;
@@ -12233,8 +12228,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
 		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n"
+		+ "\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1272\\n    -height 714\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1272\\n    -height 714\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
@@ -12710,7 +12705,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "Floor.di" "pCube1.do";
 connectAttr "polySplit11.out" "CapShape.i";
 connectAttr "sweepShape1Orig.w" "sweepShape1.i";
@@ -12719,6 +12713,84 @@ connectAttr "sweepShape3Orig.w" "sweepShape3.i";
 connectAttr "sweepShape4Orig.w" "sweepShape4.i";
 connectAttr "sweepShape5Orig.w" "sweepShape5.i";
 connectAttr "sweepShape6Orig.w" "sweepShape6.i";
+connectAttr "Droop_1_Dynamics_jnt_1.s" "Droop_1_Dynamics_jnt_2.is";
+connectAttr "Droop_1_Dynamics_jnt_2.s" "Droop_1_Dynamics_jnt_3.is";
+connectAttr "Droop_1_Dynamics_jnt_3.s" "Droop_1_Dynamics_jnt_4.is";
+connectAttr "Droop_1_Dynamics_jnt_4.tx" "effector3.tx";
+connectAttr "Droop_1_Dynamics_jnt_4.ty" "effector3.ty";
+connectAttr "Droop_1_Dynamics_jnt_4.tz" "effector3.tz";
+connectAttr "Droop_1_Dynamics_jnt_4.opm" "effector3.opm";
+connectAttr "Droop_1_Dynamics_jnt_1.msg" "Droop_1_IK_Handle.hsj";
+connectAttr "effector3.hp" "Droop_1_IK_Handle.hee";
+connectAttr "ikSplineSolver.msg" "Droop_1_IK_Handle.hsv";
+connectAttr "Droop_1_Spline_CurveShape.ws" "Droop_1_IK_Handle.ic";
+connectAttr "Droop_1_Dynamics_bshape.og[0]" "Droop_1_Spline_CurveShape.cr";
+connectAttr "Droop_2_Dynamics_jnt_1.msg" "Droop_2_IK_Handle.hsj";
+connectAttr "effector4.hp" "Droop_2_IK_Handle.hee";
+connectAttr "ikSplineSolver.msg" "Droop_2_IK_Handle.hsv";
+connectAttr "Droop_2_Spline_CurveShape.ws" "Droop_2_IK_Handle.ic";
+connectAttr "Droop_2_Dynamic_bshape.og[0]" "Droop_2_Spline_CurveShape.cr";
+connectAttr "Droop_2_Dynamics_jnt_1.s" "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2.is"
+		;
+connectAttr "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2.s" "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.is"
+		;
+connectAttr "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.tx" "effector4.tx"
+		;
+connectAttr "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.ty" "effector4.ty"
+		;
+connectAttr "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.tz" "effector4.tz"
+		;
+connectAttr "|ROOT_jnt|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.opm" "effector4.opm"
+		;
+connectAttr "Droop_3_Dynamics_jnt_1.s" "Droop_3_Dynamics_jnt_2.is";
+connectAttr "Droop_3_Dynamics_jnt_2.s" "Droop_3_Dynamics_jnt_3.is";
+connectAttr "Droop_3_Dynamics_jnt_3.s" "Droop_3_Dynamics_jnt_4.is";
+connectAttr "Droop_3_Dynamics_jnt_4.tx" "effector5.tx";
+connectAttr "Droop_3_Dynamics_jnt_4.ty" "effector5.ty";
+connectAttr "Droop_3_Dynamics_jnt_4.tz" "effector5.tz";
+connectAttr "Droop_3_Dynamics_jnt_4.opm" "effector5.opm";
+connectAttr "Droop_3_Dynamics_jnt_1.msg" "Droop_3_IK_handle.hsj";
+connectAttr "effector5.hp" "Droop_3_IK_handle.hee";
+connectAttr "ikSplineSolver.msg" "Droop_3_IK_handle.hsv";
+connectAttr "Droop_3_Spline_CurveShape.ws" "Droop_3_IK_handle.ic";
+connectAttr "Droop_3_Dynamic_bshape.og[0]" "Droop_3_Spline_CurveShape.cr";
+connectAttr "Droop_4_Dynamics_jnt_1.s" "Droop_4_Dynamics_jnt_2.is";
+connectAttr "Droop_4_Dynamics_jnt_2.s" "Droop_4_Dynamics_jnt_3.is";
+connectAttr "Droop_4_Dynamics_jnt_3.s" "Droop_4_Dynamics_jnt_4.is";
+connectAttr "Droop_4_Dynamics_jnt_4.s" "Droop_4_Dynamics_jnt_5.is";
+connectAttr "Droop_4_Dynamics_jnt_5.tx" "effector6.tx";
+connectAttr "Droop_4_Dynamics_jnt_5.ty" "effector6.ty";
+connectAttr "Droop_4_Dynamics_jnt_5.tz" "effector6.tz";
+connectAttr "Droop_4_Dynamics_jnt_5.opm" "effector6.opm";
+connectAttr "Droop_4_Dynamics_jnt_1.msg" "Droop_4_IK_Handle.hsj";
+connectAttr "effector6.hp" "Droop_4_IK_Handle.hee";
+connectAttr "ikSplineSolver.msg" "Droop_4_IK_Handle.hsv";
+connectAttr "Droop_4_Spline_CurveShape.ws" "Droop_4_IK_Handle.ic";
+connectAttr "Droop_4_Dynamics_bshape.og[0]" "Droop_4_Spline_CurveShape.cr";
+connectAttr "Droop_5_Dynamics_jnt_1.s" "Droop_5_Dynamics_jnt_2.is";
+connectAttr "Droop_5_Dynamics_jnt_2.s" "Droop_5_Dynamics_jnt_3.is";
+connectAttr "Droop_5_Dynamics_jnt_3.tx" "effector7.tx";
+connectAttr "Droop_5_Dynamics_jnt_3.ty" "effector7.ty";
+connectAttr "Droop_5_Dynamics_jnt_3.tz" "effector7.tz";
+connectAttr "Droop_5_Dynamics_jnt_3.opm" "effector7.opm";
+connectAttr "Droop_5_Dynamics_jnt_1.msg" "Droop_5_IK_Handle.hsj";
+connectAttr "effector7.hp" "Droop_5_IK_Handle.hee";
+connectAttr "ikSplineSolver.msg" "Droop_5_IK_Handle.hsv";
+connectAttr "Droop_5_Spline_CurveShape.ws" "Droop_5_IK_Handle.ic";
+connectAttr "Droop_5_Dynamics_bshape.og[0]" "Droop_5_Spline_CurveShape.cr";
+connectAttr "Droop_6_Dynamics_jnt_1.s" "Droop_6_Dynamics_jnt_2.is";
+connectAttr "Droop_6_Dynamics_jnt_2.s" "Droop_6_Dynamics_jnt_3.is";
+connectAttr "Droop_6_Dynamics_jnt_3.s" "Droop_6_Dynamics_jnt_4.is";
+connectAttr "Droop_6_Dynamics_jnt_4.s" "Droop_6_Dynamics_jnt_5.is";
+connectAttr "Droop_6_Dynamics_jnt_5.tx" "effector8.tx";
+connectAttr "Droop_6_Dynamics_jnt_5.ty" "effector8.ty";
+connectAttr "Droop_6_Dynamics_jnt_5.tz" "effector8.tz";
+connectAttr "Droop_6_Dynamics_jnt_5.opm" "effector8.opm";
+connectAttr "Droop_6_Dynamics_jnt_1.msg" "Droop_6_IK_Handle.hsj";
+connectAttr "effector8.hp" "Droop_6_IK_Handle.hee";
+connectAttr "ikSplineSolver.msg" "Droop_6_IK_Handle.hsv";
+connectAttr "Droop_6_Spline_CurveShape.ws" "Droop_6_IK_Handle.ic";
+connectAttr "Droop_6_Dynamics_bshape.og[0]" "Droop_6_Spline_CurveShape.cr";
 connectAttr "ROOT_jnt.s" "Curve_Base.is";
 connectAttr "Curve_Base.s" "Curve_1.is";
 connectAttr "Curve_1_md.ox" "Curve_1.tx";
@@ -14583,84 +14655,6 @@ connectAttr "Stem_Tip_ctrl.ro" "Curve_DriverTip_orientConstraint1.tg[0].tro";
 connectAttr "Stem_Tip_ctrl.pm" "Curve_DriverTip_orientConstraint1.tg[0].tpm";
 connectAttr "Curve_DriverTip_orientConstraint1.w0" "Curve_DriverTip_orientConstraint1.tg[0].tw"
 		;
-connectAttr "Droop_1_Dynamics_jnt_1.s" "Droop_1_Dynamics_jnt_2.is";
-connectAttr "Droop_1_Dynamics_jnt_2.s" "Droop_1_Dynamics_jnt_3.is";
-connectAttr "Droop_1_Dynamics_jnt_3.s" "Droop_1_Dynamics_jnt_4.is";
-connectAttr "Droop_1_Dynamics_jnt_4.tx" "effector3.tx";
-connectAttr "Droop_1_Dynamics_jnt_4.ty" "effector3.ty";
-connectAttr "Droop_1_Dynamics_jnt_4.tz" "effector3.tz";
-connectAttr "Droop_1_Dynamics_jnt_4.opm" "effector3.opm";
-connectAttr "Droop_1_Dynamics_jnt_1.msg" "Droop_1_IK_Handle.hsj";
-connectAttr "effector3.hp" "Droop_1_IK_Handle.hee";
-connectAttr "ikSplineSolver.msg" "Droop_1_IK_Handle.hsv";
-connectAttr "Droop_1_Spline_CurveShape.ws" "Droop_1_IK_Handle.ic";
-connectAttr "Droop_1_Dynamics_bshape.og[0]" "Droop_1_Spline_CurveShape.cr";
-connectAttr "Droop_2_Dynamics_jnt_1.msg" "Droop_2_IK_Handle.hsj";
-connectAttr "effector4.hp" "Droop_2_IK_Handle.hee";
-connectAttr "ikSplineSolver.msg" "Droop_2_IK_Handle.hsv";
-connectAttr "Droop_2_Spline_CurveShape.ws" "Droop_2_IK_Handle.ic";
-connectAttr "Droop_2_Dynamic_bshape.og[0]" "Droop_2_Spline_CurveShape.cr";
-connectAttr "Droop_2_Dynamics_jnt_1.s" "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2.is"
-		;
-connectAttr "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2.s" "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.is"
-		;
-connectAttr "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.tx" "effector4.tx"
-		;
-connectAttr "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.ty" "effector4.ty"
-		;
-connectAttr "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.tz" "effector4.tz"
-		;
-connectAttr "|ROOT_jnt|Curve_Driver_Base|Curve_Driver_1|Curve_Driver_2|Curve_Driver_3|Curve_DriverTip|Droop_Splines|Droop_2_Dynamics_jnt_1|Droop_2_Dynamics_jnt_2|Droop_2_Dynamics_jnt_2.opm" "effector4.opm"
-		;
-connectAttr "Droop_3_Dynamics_jnt_1.s" "Droop_3_Dynamics_jnt_2.is";
-connectAttr "Droop_3_Dynamics_jnt_2.s" "Droop_3_Dynamics_jnt_3.is";
-connectAttr "Droop_3_Dynamics_jnt_3.s" "Droop_3_Dynamics_jnt_4.is";
-connectAttr "Droop_3_Dynamics_jnt_4.tx" "effector5.tx";
-connectAttr "Droop_3_Dynamics_jnt_4.ty" "effector5.ty";
-connectAttr "Droop_3_Dynamics_jnt_4.tz" "effector5.tz";
-connectAttr "Droop_3_Dynamics_jnt_4.opm" "effector5.opm";
-connectAttr "Droop_3_Dynamics_jnt_1.msg" "Droop_3_IK_handle.hsj";
-connectAttr "effector5.hp" "Droop_3_IK_handle.hee";
-connectAttr "ikSplineSolver.msg" "Droop_3_IK_handle.hsv";
-connectAttr "Droop_3_Spline_CurveShape.ws" "Droop_3_IK_handle.ic";
-connectAttr "Droop_3_Dynamic_bshape.og[0]" "Droop_3_Spline_CurveShape.cr";
-connectAttr "Droop_4_Dynamics_jnt_1.s" "Droop_4_Dynamics_jnt_2.is";
-connectAttr "Droop_4_Dynamics_jnt_2.s" "Droop_4_Dynamics_jnt_3.is";
-connectAttr "Droop_4_Dynamics_jnt_3.s" "Droop_4_Dynamics_jnt_4.is";
-connectAttr "Droop_4_Dynamics_jnt_4.s" "Droop_4_Dynamics_jnt_5.is";
-connectAttr "Droop_4_Dynamics_jnt_5.tx" "effector6.tx";
-connectAttr "Droop_4_Dynamics_jnt_5.ty" "effector6.ty";
-connectAttr "Droop_4_Dynamics_jnt_5.tz" "effector6.tz";
-connectAttr "Droop_4_Dynamics_jnt_5.opm" "effector6.opm";
-connectAttr "Droop_4_Dynamics_jnt_1.msg" "Droop_4_IK_Handle.hsj";
-connectAttr "effector6.hp" "Droop_4_IK_Handle.hee";
-connectAttr "ikSplineSolver.msg" "Droop_4_IK_Handle.hsv";
-connectAttr "Droop_4_Spline_CurveShape.ws" "Droop_4_IK_Handle.ic";
-connectAttr "Droop_4_Dynamics_bshape.og[0]" "Droop_4_Spline_CurveShape.cr";
-connectAttr "Droop_5_Dynamics_jnt_1.s" "Droop_5_Dynamics_jnt_2.is";
-connectAttr "Droop_5_Dynamics_jnt_2.s" "Droop_5_Dynamics_jnt_3.is";
-connectAttr "Droop_5_Dynamics_jnt_3.tx" "effector7.tx";
-connectAttr "Droop_5_Dynamics_jnt_3.ty" "effector7.ty";
-connectAttr "Droop_5_Dynamics_jnt_3.tz" "effector7.tz";
-connectAttr "Droop_5_Dynamics_jnt_3.opm" "effector7.opm";
-connectAttr "Droop_5_Dynamics_jnt_1.msg" "Droop_5_IK_Handle.hsj";
-connectAttr "effector7.hp" "Droop_5_IK_Handle.hee";
-connectAttr "ikSplineSolver.msg" "Droop_5_IK_Handle.hsv";
-connectAttr "Droop_5_Spline_CurveShape.ws" "Droop_5_IK_Handle.ic";
-connectAttr "Droop_5_Dynamics_bshape.og[0]" "Droop_5_Spline_CurveShape.cr";
-connectAttr "Droop_6_Dynamics_jnt_1.s" "Droop_6_Dynamics_jnt_2.is";
-connectAttr "Droop_6_Dynamics_jnt_2.s" "Droop_6_Dynamics_jnt_3.is";
-connectAttr "Droop_6_Dynamics_jnt_3.s" "Droop_6_Dynamics_jnt_4.is";
-connectAttr "Droop_6_Dynamics_jnt_4.s" "Droop_6_Dynamics_jnt_5.is";
-connectAttr "Droop_6_Dynamics_jnt_5.tx" "effector8.tx";
-connectAttr "Droop_6_Dynamics_jnt_5.ty" "effector8.ty";
-connectAttr "Droop_6_Dynamics_jnt_5.tz" "effector8.tz";
-connectAttr "Droop_6_Dynamics_jnt_5.opm" "effector8.opm";
-connectAttr "Droop_6_Dynamics_jnt_1.msg" "Droop_6_IK_Handle.hsj";
-connectAttr "effector8.hp" "Droop_6_IK_Handle.hee";
-connectAttr "ikSplineSolver.msg" "Droop_6_IK_Handle.hsv";
-connectAttr "Droop_6_Spline_CurveShape.ws" "Droop_6_IK_Handle.ic";
-connectAttr "Droop_6_Dynamics_bshape.og[0]" "Droop_6_Spline_CurveShape.cr";
 connectAttr "Curve_DriverTip.tx" "effector2.tx";
 connectAttr "Curve_DriverTip.ty" "effector2.ty";
 connectAttr "Curve_DriverTip.tz" "effector2.tz";
