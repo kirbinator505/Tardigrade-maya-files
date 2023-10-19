@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
-//Name: Giant Mushroom.ma
-//Last modified: Wed, Oct 18, 2023 10:42:15 AM
+//Name: Giant Mushroom Idle.ma
+//Last modified: Wed, Oct 18, 2023 10:42:34 AM
 //Codeset: 1252
 requires maya "2023";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
@@ -13,7 +13,7 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "D96A57E3-4C22-59FE-3DD1-479EC64BDD20";
+fileInfo "UUID" "8CB111E3-4591-90F1-FC15-E7AA97267E25";
 createNode transform -s -n "persp";
 	rename -uid "2F48F3AC-41E6-6F08-A94B-02A3227FBED3";
 	setAttr ".v" no;
@@ -21279,4 +21279,4 @@ connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Shroom_GeoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "ikSplineSolver.msg" ":ikSystem.sol" -na;
-// End of Giant Mushroom.ma
+// End of Giant Mushroom Idle.ma
