@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: Level Box.ma
-//Last modified: Fri, Jan 19, 2024 09:06:00 PM
+//Last modified: Wed, Jan 31, 2024 11:02:47 AM
 //Codeset: 1252
 requires maya "2023";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.1.2";
@@ -10,18 +10,18 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19045)";
-fileInfo "UUID" "632CA433-4D3B-4FA7-7AEE-EDA216D56021";
+fileInfo "UUID" "422459D7-483D-3F99-A7C0-1B9884C09C06";
 createNode transform -s -n "persp";
 	rename -uid "890A0492-49D9-5F1B-FE4F-2E84E37DD20F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -48.212722317167476 22.622825370477933 9.2499739849238711 ;
-	setAttr ".r" -type "double3" 340.19999999985833 280.00000000001523 9.1580422098043874e-15 ;
+	setAttr ".t" -type "double3" -64.230197063156737 52.491363516895987 52.644432710638497 ;
+	setAttr ".r" -type "double3" 339.59999999984746 305.20000000000738 0 ;
 	setAttr ".rpt" -type "double3" -1.1706207889524463e-15 3.8261953754960158e-18 -1.2666448773802702e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "89AAA100-4828-0DDB-A821-5599D5544B94";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 49.636410431163441;
+	setAttr ".coi" 95.851387430908062;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -165,8 +165,7 @@ createNode mesh -n "Base_PlateShape" -p "Base_Plate";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 39 ".pt";
-	setAttr ".pt[87]" -type "float3" 2.9592775e-07 0 0 ;
+	setAttr ".pt[87]" -type "float3"  2.9592775e-07 0 0;
 	setAttr -s 88 ".vt[0:87]"  -9.38317108 0.25259736 9.063989639 -9.5 0.25259736 9.5
 		 -9.063989639 0.25259736 9.38317108 9.61682892 0.25259736 -9.93601036 9.5 0.25259736 -9.5
 		 9.93601036 0.25259736 -9.61682892 -9.61682892 0.25259736 9.93601036 -9.93601036 0.25259736 9.61682892
@@ -1583,7 +1582,7 @@ createNode mesh -n "Piston_Shape1" -p "Piston_1";
 	setAttr ".gtag[8].gtagcmp" -type "componentList" 1 "f[12:17]";
 	setAttr ".gtag[9].gtagnm" -type "string" "topRing";
 	setAttr ".gtag[9].gtagcmp" -type "componentList" 1 "e[6:11]";
-	setAttr ".pv" -type "double2" 0.62526318430900574 0.94150139188616888 ;
+	setAttr ".pv" -type "double2" 0.62526318430900574 0.94631871581077576 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 28 ".uvst[0].uvsp[0:27]" -type "float2" 0.51448804 0.9234364
 		 0.51448804 0.95956635 0.54577744 0.97763127 0.57706684 0.95956635 0.57706684 0.92343646
@@ -1600,9 +1599,9 @@ createNode mesh -n "Piston_Shape1" -p "Piston_1";
 	setAttr -s 14 ".pt[0:13]" -type "float3"  0.51581103 31.447933 -0.89341038 
 		-0.51581061 31.447933 -0.89341062 -1.0316216 31.447933 -1.5372359e-07 -0.51581091 
 		31.447933 0.89341044 0.51581073 31.447933 0.8934105 1.0316216 31.447933 0 0.51581103 
-		35.486111 -0.89341038 -0.51581061 35.486111 -0.89341062 -1.0316216 35.486111 -1.5372359e-07 
-		-0.51581091 35.486111 0.89341044 0.51581073 35.486111 0.8934105 1.0316216 35.486111 
-		0 0 31.447933 0 0 35.486111 0;
+		46.013763 -0.89341038 -0.51581061 46.013763 -0.89341062 -1.0316216 46.013763 -1.5372359e-07 
+		-0.51581091 46.013763 0.89341044 0.51581073 46.013763 0.8934105 1.0316216 46.013763 
+		0 0 31.447933 0 0 46.013763 0;
 	setAttr -s 14 ".vt[0:13]"  0.50000024 -1 -0.86602533 -0.49999985 -1 -0.86602551
 		 -1 -1 -1.4901161e-07 -0.50000012 -1 0.86602539 0.49999997 -1 0.86602545 1 -1 0 0.50000024 1 -0.86602533
 		 -0.49999985 1 -0.86602551 -1 1 -1.4901161e-07 -0.50000012 1 0.86602539 0.49999997 1 0.86602545
@@ -8088,19 +8087,19 @@ createNode mesh -n "B_L_B_Lock_PinShape" -p "B_L_B_Lock_Pin";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "0562D4E9-49AE-18FE-0664-4A8FDB1169E8";
+	rename -uid "68FE37D4-4740-5EA0-421B-C18D275CA593";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B7818031-412F-33C2-66D1-FDA5C5948C8F";
+	rename -uid "E2077D82-4AC8-AFBC-F6FB-2C9D9EABFDD0";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C65C273E-4616-1EC1-F318-4DA1B70E183C";
+	rename -uid "B67DF4CA-48C6-D1CA-0828-CAAD296E4352";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CCA05F09-4376-911D-8763-13978CAEF898";
+	rename -uid "718F8FB3-49FD-C057-F71F-C29C6310AF39";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "5C360948-4935-0DA7-7178-1A844B64E816";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5800B627-4560-343F-BD97-56B0E4217A39";
+	rename -uid "5F810CF1-4075-5648-4719-88AE4228D7A3";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "6D203495-47A4-6E45-DBC2-E0A3F401C119";
 	setAttr ".g" yes;
@@ -8224,8 +8223,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "standardSurface2SG.message" ":defaultLightSet.message";
